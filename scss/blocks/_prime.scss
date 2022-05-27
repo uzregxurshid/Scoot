@@ -1,0 +1,264 @@
+.prime {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom:250px;
+    &--about{
+      padding-bottom: 100px;
+    }
+    &--careers{
+      padding-bottom: 100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include list-unstyled;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    position: relative;
+    &--about{
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    position: relative;
+    &::after{
+      background-image:url("../images/prime/about/arrow.svg");
+        background-size:740px 250px;
+        width: 740px;
+        height: 250px;
+        position: absolute;
+        right:-200px;
+        margin-top: 80px;
+        content: "";
+    }
+    }
+    &:first-child{
+      &::after{
+        background-image:url("../images/prime/arrow.svg");
+        background-size:740px 250px;
+        width: 740px;
+        height: 250px;
+        position: absolute;
+        right:-200px;
+        margin-top: 80px;
+        content:"";
+      }
+    }
+    &:last-child{
+      &::after{
+        background-image:url("../images/prime/arrowb.svg");
+        background-size:735px 138px;
+        width: 735px;
+        height:138px;
+        position: absolute;
+        right:-200px;
+        margin-top: -20px;
+        content:"";
+      }
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      &::after{
+        background-image:url("../images/prime/arrowm.svg");
+        background-size:735px 138px;
+        width: 735px;
+        height:138px;
+        position: absolute;
+        left:0;
+        margin-top: 80px;
+        content:"";
+      }
+      &::before {
+        left: -500px;
+      }
+    }
+
+    &::before {
+      background-color: $light-grey;
+      background-size: 445px 445px;
+      display: inline-block;
+      width: 445px;
+      height: 445px;
+      position: absolute;
+      border-radius: 50%;
+      right:-500px;
+      content: '';
+    }
+  }
+
+  &__img {
+    width: 445px;
+    height: 445px;
+    border-radius: 50%;
+  }
+
+  &__content {
+    width: 445px;
+  }
+
+  &__title {
+    @include s48;
+    margin: 0;
+    margin-bottom: 24px;
+    color: $dark-navy;
+  }
+
+  &__text {
+    @include s15($font-secondary);
+    color: $dim-grey;
+  }
+
+  &__button {
+    @include button(180px);
+  }
+  @include max(1050px){
+    &__container{
+      padding-bottom: 200px;
+    }
+    &__content{
+      display: flex;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__items{
+      &--about{
+        flex-direction: column-reverse;
+      align-items: center;
+      }
+      flex-direction: column-reverse;
+      align-items: center;
+      &::before{
+        top: 0;
+        right:-380px;
+      }
+
+      &:last-child{
+        &::after{
+          right:-20px;
+          top: 70px;
+        }
+              }
+      &:first-child, &--about{
+       &::after{
+         top:120px;
+         right:-30px;
+       }
+       }
+      &:nth-child(even){
+        flex-direction: column-reverse;
+        align-items: center;
+        &::after{
+        top: -80px;
+          right:-20px;
+        }
+        &::before{
+          left:-380px;
+          top: 0;
+        }
+      }
+    }
+  }
+  @include max(750px){
+    &__container{
+      padding-bottom: 170px;
+    }
+    &__items{
+      &::before{
+        background:none;
+        width: 0;
+        height: 0;
+      }
+      &:first-child::after, &--about:after{
+      right:-200px;
+      }
+    }
+  }
+  @include max(580px){
+    &__img{
+      width: 311px;
+      height: 311px;
+    }
+    &__items{
+      &:first-child,&--about{
+        &::after{
+          right:-420px;
+          top: 28px;
+        }
+      }
+      &:nth-child(even){
+        &::after{
+          left:-320px;
+          top: -100px;
+        }
+      }
+      &:last-child{
+        &::after{
+          top:20px;
+          right:-320px;
+        }
+      }
+    }
+  }
+  @include max(500px){
+    &__container{
+      padding-bottom: 150px;
+    }
+    &__title{
+      font-size: 32px;
+      line-height: 32px;
+    }
+    &__content{
+      width:370px;
+    }
+  }
+  @include max(400px){
+    &__content{
+      width: 320px;
+
+    }
+  }
+  @include max(367px){
+    &__img{
+      margin-left: 0;
+    }
+    &__container{
+      padding-bottom: 120px;
+    }
+    &__img{
+      width:270px;
+      height: 270px;
+      margin-left: 20px;
+    }
+    &__content{
+      width: 280px;
+      padding-left: 20px;
+    }
+  }
+  @include max(350px){
+    &__img{
+      width: 220px;
+      height: 220px;
+    }
+    &__content{
+      padding-left: 0;
+      width: 250px;
+    }
+    &__items{
+      &:first-child,&--about{
+        &::after{
+          right:-500px;
+          top: -60px;
+        }
+      }
+    }
+  }
+}

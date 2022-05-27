@@ -1,0 +1,139 @@
+.faq{
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px;
+  }
+  &__top,&__bottom{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &__bottom{
+    margin-top: 64px;
+
+  }
+  &__head{
+    @include s48;
+    color:$dark-navy;
+  }
+  &__left{
+    margin-top: 35px;
+    @include s40;
+    color:$dark-navy;
+    width: 350px;
+  }
+  &__list{
+    width: 730px;
+    @include list-unstyled;
+  }
+  &__items{
+    padding: 32px 40px;
+    background:#F2F5F9;
+    @include s24;
+    color:$dark-navy;
+    margin-top: 48px;
+    position: relative;
+  }
+  &__ans{
+    display: none;
+  }
+  &__q{
+    position: relative;
+    appearance:none;
+    &::before{
+      background-image:url("../images/faq/open.svg");
+      background-size:16px 8px;
+      display: inline-block;
+      width: 16px;
+      height: 8px;
+      position: absolute;
+      right:-600px;
+      top: -10px;
+      content: "";
+    }
+    &:checked{
+      &::before{
+      background-image:url("../images/faq/close.svg");
+      }
+    }
+    &:checked + .faq__ans{
+      display: block;
+      transition:.4s;
+    }
+  }
+  &__ans{
+    @include s15($font-secondary);
+    width: 650px;
+    margin-top: 24px;
+  }
+  @include max(1120px){
+    &__top, &__bottom{
+      flex-direction: column;
+      align-items: center;
+    }
+    &__left{
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @include max(820px){
+    &__list{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__items{
+      width: 600px;
+    }
+    &__q{
+      &::before{
+        right: -500px;
+      }
+    }
+    &__ans{
+      width: auto;
+    }
+    
+  }
+  @include max(630px){
+  
+    &__list{
+      align-self: center;
+
+      align-items: center;
+      width:auto;
+    }
+    &__items{
+      width:75vw;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    &__q{
+      &::before{
+        right:-60vw;
+      }
+    }
+  }
+ 
+  @include max(450px){
+    &__items{
+      width: auto;
+    }
+    &__q{
+      &::before{
+        right:-70vw;
+      }
+    }
+  }
+  @include max(374px){
+    &__items{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+}

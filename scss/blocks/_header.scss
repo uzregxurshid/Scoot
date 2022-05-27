@@ -1,0 +1,161 @@
+.header {
+  width: 100%;
+  z-index:10;
+  position: fixed;
+  background-color: $white;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 21px 0;
+
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__toggle {
+    &--button {
+      display: none;
+      appearance: none;
+      cursor: pointer;
+
+      &::before {
+        background: url("../images/header/toggle-open.svg");
+        display: inline-block;
+        background-size: 20px 16px;
+        width: 20px;
+        height: 16px;
+        content: "";
+        transition: .4s;
+      }
+
+      &:checked::before {
+        background: url("../images/header/toggle-close.svg");
+        display: inline-block;
+        background-size: 18px 18px;
+        width: 18px;
+        height: 18px;
+        content: "";
+        transition: .4s;
+      }
+    }
+  }
+
+  &__navbar {
+    margin-left: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 940px;
+    width: 100%;
+    z-index: 10;
+
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list {
+    @include list-unstyled;
+    display: flex;
+  }
+
+  &__items~&__items {
+    margin-left: 32px;
+  }
+
+  &__links {
+    @include s15($font-primary);
+    text-decoration: none;
+    color: $dim-grey;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  &__get {
+    &--link {
+      @include button(180px);
+    }
+  }
+  
+  @include max(660px) {
+    &__navbar {
+      display: none;
+    }
+
+    &__toggle {
+      &--button {
+        display: flex;
+        order: 1;
+        flex-grow: 1;
+      }
+
+    }
+
+    &__toggle--button:checked+.header__navbar {
+      display: flex;
+      position: absolute;
+      width: 68%;
+      top: 75px;
+      flex-direction: column;
+      left: -60px;
+      height: 100vh;
+      padding-left: 40px;
+      padding-top: 60px;
+      padding-right: 20px;
+      background-color: #333A44;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__items~&__items {
+      margin-left: 0;
+      margin-top: 24px;
+    }
+
+    &__links {
+      color: $white;
+    }
+
+    &__get {
+      &--link {
+        margin-top:200px;
+      }
+    }
+
+    &__logo {
+      order: 2;
+      flex-grow: 20;
+    }
+  }
+  @include max(380px){
+    &__toggle--button:checked+.header__navbar {
+      top:64px;
+    }
+    &__get--link{
+      @include button(150px);
+      }
+    
+    &__container{
+      padding:16px 0;
+    }
+  }
+}

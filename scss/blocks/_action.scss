@@ -1,0 +1,78 @@
+.action {
+  background:url("../images/action/bg.svg"), $dark-navy;
+  background-position:bottom -200px right -180px;
+  background-repeat:no-repeat;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 102px 0;
+  }
+
+  &__title {
+    @include s48;
+    color: $white;
+    margin: 0;
+  }
+
+  &__left {
+    width: 415px;
+    margin: 0;
+  }
+
+  &__list {
+    @include list-unstyled;
+    display: flex;
+  }
+
+  &__items~&__items {
+    margin-left: 33px;
+  }
+
+  @include max(1000px) {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__list {
+      margin-top: 48px;
+    }
+  }
+
+  @include max(768px) {
+    &__container {
+      padding: 62px 0;
+    }
+    
+  }
+  @include max(524px){
+    &__title{
+      font-size:32px;
+      line-height: 32px;
+    }
+    &__left{
+      width: 311px;
+    }
+  }
+  @include max(425){
+    &__container{
+      padding: 88px 0;
+    }
+  }
+  @include max(360px){
+  background-position:bottom -200px right -215px;
+
+    &__title{
+      @include s24;
+    }
+    &__left{
+      width: 260px;
+    }
+  }
+}

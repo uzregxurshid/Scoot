@@ -1,0 +1,28 @@
+.intro{
+  background: linear-gradient(right, #2f3b59c0), url("../images/intro/aboutbg.png");
+  background-size: cover;
+  background-position:20% 30%;
+  background-repeat: no-repeat;
+  &__container{
+    &--about{
+      padding-top: 170px;
+      padding-bottom: 80px;
+    }
+  }
+  &__title{
+
+    &--about{
+      position: relative;
+      &::before{
+        background:url("../images/intro/hover.svg");
+        background-size: 234px 63px;
+        width: 234px;
+        height: 63px;
+        position: absolute;
+        display: inline-block;
+        content: "";
+        right:-800px;
+      }
+    }
+  }
+}

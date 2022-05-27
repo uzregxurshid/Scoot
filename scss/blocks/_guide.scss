@@ -1,0 +1,145 @@
+.guide {
+  &__container {
+    display: flex;
+    padding-top: 160px;
+    padding-bottom: 40px;
+  }
+
+  &__list {
+    @include list-unstyled;
+    display: flex;
+
+    &::before {
+      background: $light-grey;
+      background-size: 800px 15px;
+      display: inline-block;
+      width: 1200px;
+      height: 15px;
+      margin-top: 40px;
+      margin-left: -400px;
+      position: absolute;
+      z-index: 0;
+      content: "";
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+  }
+
+  &__img {
+    z-index: 3;
+  }
+
+  &__items~&__items {
+    margin-left: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 40px;
+    color:$dark-navy;
+    @include s24;
+  }
+
+  &__text {
+    @include s15($font-secondary);
+    color: $dim-grey;
+  }
+
+  @include max(1100px) {
+    &__items {
+      width: 270px;
+    }
+
+    &__list {
+      &::before {
+        margin-left: -550px;
+      }
+    }
+  }
+
+  @include max(920px) {
+    &__container {
+      display: flex;
+      justify-content: center;
+      padding-top: 122px;
+    }
+
+    &__list {
+      flex-direction: column;
+
+      &::before {
+        width: 15px;
+        height: 575px;
+        margin-left: 40px;
+        margin-top: -120px;
+      }
+    }
+
+    &__items {
+      flex-direction: row;
+      align-items: center;
+      width: auto;
+    }
+
+    &__content {
+      margin-left: 79px;
+      width: 398px;
+      padding-right: 30px;
+    }
+
+    &__items~&__items {
+      margin-left: 0;
+    }
+
+    &__container {
+      padding-left: 97px;
+    }
+  }
+
+  @include max(600px) {
+    &__items {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__container {
+      padding-left: 0;
+    }
+
+    &__list {
+      &::before {
+        background: none;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    &__content {
+      text-align: center;
+      margin-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include max(450px) {
+    &__img {
+      width: 56px;
+      height: 56px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__content {
+      width: auto;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}

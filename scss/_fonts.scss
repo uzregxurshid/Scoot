@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../fonts/SpaceMono-BoldItalic.eot');
+  src: local('Space Mono Bold Italic'), local('SpaceMono-BoldItalic'),
+      url('../fonts/SpaceMono-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SpaceMono-BoldItalic.woff2') format('woff2'),
+      url('../fonts/SpaceMono-BoldItalic.woff') format('woff'),
+      url('../fonts/SpaceMono-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../fonts/SpaceMono-Bold.eot');
+  src: local('Space Mono Bold'), local('SpaceMono-Bold'),
+      url('../fonts/SpaceMono-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SpaceMono-Bold.woff2') format('woff2'),
+      url('../fonts/SpaceMono-Bold.woff') format('woff'),
+      url('../fonts/SpaceMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../fonts/SpaceMono-Regular.eot');
+  src: local('Space Mono'), local('SpaceMono-Regular'),
+      url('../fonts/SpaceMono-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SpaceMono-Regular.woff2') format('woff2'),
+      url('../fonts/SpaceMono-Regular.woff') format('woff'),
+      url('../fonts/SpaceMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../fonts/SpaceMono-Italic.eot');
+  src: local('Space Mono Italic'), local('SpaceMono-Italic'),
+      url('../fonts/SpaceMono-Italic.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SpaceMono-Italic.woff2') format('woff2'),
+      url('../fonts/SpaceMono-Italic.woff') format('woff'),
+      url('../fonts/SpaceMono-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('..fonts/LexendDeca-Regular.eot');
+  src: local('Lexend Deca Regular'), local('LexendDeca-Regular'),
+      url('..fonts/LexendDeca-Regular.eot?#iefix') format('embedded-opentype'),
+      url('..fonts/LexendDeca-Regular.woff2') format('woff2'),
+      url('..fonts/LexendDeca-Regular.woff') format('woff'),
+      url('..fonts/LexendDeca-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

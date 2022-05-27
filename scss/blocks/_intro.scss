@@ -1,0 +1,143 @@
+.intro {
+  background: linear-gradient(right, #2f3b59c0), url("../images/intro/scooter.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  &--careers{
+    background: linear-gradient(right, #2f3b59c0), url("../images/intro/bitmap.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 153px;
+    padding-bottom: 157px;
+   
+  }
+
+  &__head {
+    width: 500px;
+  }
+
+  &__title {
+    @include s56;
+    color: $white;
+    margin: 0;
+  }
+
+
+
+
+
+  &__promo {
+    margin-top: 40px;
+    align-items: center;
+    display: flex;
+    @include s15($font-secondary);
+    color: $white;
+    width: 405px;
+    margin-left: 80px;
+
+    &::before {
+      background-size: 500px 15px;
+      background: $yellow;
+      display: inline-block;
+      width: 500px;
+      height: 15px;
+      position: absolute;
+      margin-left: -550px;
+      z-index: 0;
+      content: "";
+    }
+
+    &::after {
+      background: url("../images/intro/arrow.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 447px;
+      height: 138px;
+      position: absolute;
+      content: "";
+      margin-top: 100px;
+      margin-left: 420px;
+    }
+  }
+
+  &__get {
+    &--button {
+      @include button(180px);
+      margin-top: 40px;
+      position: relative;
+    }
+    &--button:hover{
+      &::before{
+        background:url("../images/intro/hover.svg");
+        background-size: 234px 63px;
+        width: 234px;
+        height: 63px;
+        position: absolute;
+        display: inline-block;
+        content: "";
+        right:-1125px;
+      }
+    }
+  }
+
+  @include max(950px) {
+    background-position:75% 0;
+    &__container {
+      align-items: center;
+    }
+    &__title{
+      text-align: center;
+    }
+    &__promo{
+      margin-left: 0;
+      text-align: center;
+      &::before{
+        background: none;
+      }
+      &::after{
+        margin-left: -300px;
+        margin-top: 400px;
+        z-index:1;
+      }
+    }
+    &__get{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @include max(520px){
+    &__title{
+      @include s48;
+    }
+  }
+  @include max(425px){
+    background-position:80% 20%;
+    &__head{
+      max-width:400px;
+      width:100%;
+    }
+    &__title{
+      @include s40;
+    }
+    &__promo{
+      max-width:370px;
+      width:100%;
+      
+    }
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    background: linear-gradient(right, #2f3b59c0), url("../images/intro/scooter@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

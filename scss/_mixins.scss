@@ -1,0 +1,74 @@
+@mixin list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin s56 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 56px;
+  letter-spacing: -2.5px;
+}
+
+@mixin s48 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -2.14286px;
+}
+
+@mixin s40 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1.78571px;
+}
+
+@mixin s24 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.07143px;
+}
+
+@mixin s15($font) {
+  font-family: $font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@mixin button($size) {
+  display: flex;
+  width: $size;
+  border: 1px solid transparent;
+  padding: 14px;
+  align-items: center;
+  justify-content: center;
+  background-color: $yellow;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: $white;
+
+  &:hover {
+    color: $yellow;
+    background-color: transparent;
+    border: 1px solid $yellow;
+  }
+}
+
+@mixin max($size) {
+  @media only screen and (max-width:$size) {
+    @content;
+  }
+}
